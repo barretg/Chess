@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 
 /**
  * The main view class for the Chess MVC.
+ * 
  * @author barretglass
  *
  */
