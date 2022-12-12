@@ -32,14 +32,6 @@ public class ChessGUI extends JFrame {
 	private JLabel lblNewLabel;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		ChessGUI main = new ChessGUI(IView2ModelAdapter.makeNull());
-		main.start();
-	}
-
-	/**
 	 * Create the GUI for the chess game.
 	 */
 	public ChessGUI(IView2ModelAdapter v2m) {
@@ -73,7 +65,7 @@ public class ChessGUI extends JFrame {
 			public void run() {
 				try {
 					setVisible(true);
-					updatePhase(GAME_PHASE.Start);
+					_view2Model.updatePhase(GAME_PHASE.Start);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -85,7 +77,7 @@ public class ChessGUI extends JFrame {
 		switch(phase) {
 			case Start:
 				pnlControls = new StartControls(_view2Model);
-				System.out.println("Start phase!");
+//				System.out.println("Start phase!");
 				break;
 			case Play:
 				pnlControls = new PlayControls(_view2Model);
@@ -101,7 +93,7 @@ public class ChessGUI extends JFrame {
 		pnlSouth.add(pnlControls);
 		
 		pnlControls.start();
-		System.out.println("Started!");
+//		System.out.println("Started!");
 		
 		validate();
 		repaint();
