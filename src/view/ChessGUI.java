@@ -2,6 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -47,7 +48,18 @@ public class ChessGUI extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
-		pnlGame = new JPanel();
+		pnlGame = new JPanel() {
+			
+			/**
+			* Overridden paintComponent method to paint a shape in the panel.
+			* @param g The Graphics object to paint on.
+			**/
+			@Override
+			public void paintComponent(Graphics g) {
+			    super.paintComponent(g);   // Do everything normally done first, e.g. clear the screen.
+			    _view2Model.update(g);
+			}
+		};;
 		contentPane.add(pnlGame, BorderLayout.CENTER);
 		
 		lblNewLabel = new JLabel("There will be a game here eventually....");

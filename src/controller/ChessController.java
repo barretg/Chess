@@ -1,5 +1,7 @@
 package controller;
 
+import java.awt.Graphics;
+
 import model.ChessModel;
 import model.IModel2ViewAdapter;
 import utilities.GAME_PHASE;
@@ -17,6 +19,11 @@ public class ChessController {
 			@Override
 			public void updatePhase(GAME_PHASE phase) {
 				_model.updatePhase(phase);
+			}
+
+			@Override
+			public void update(Graphics g) {
+				_model.update(g);
 			}
 			
 		});

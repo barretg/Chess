@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Graphics;
+
 import utilities.GAME_PHASE;
 
 /**
@@ -17,10 +19,17 @@ public interface IView2ModelAdapter {
 			public void updatePhase(GAME_PHASE phase) {
 				//no-op
 			}
+
+			@Override
+			public void update(Graphics g) {
+				//no-op
+			}
 			
 		};
 	}
 
 	public void updatePhase(GAME_PHASE phase);
+
+	public void update(Graphics g);
 
 }

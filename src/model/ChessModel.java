@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Graphics;
+
 import utilities.GAME_PHASE;
 
 public class ChessModel {
@@ -18,6 +20,10 @@ public class ChessModel {
 
 	public void start() {
 		//do startup things
+	}
+
+	public void update(Graphics g) {
+		//tell all the pieces to move
 	}
 
 }
